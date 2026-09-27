@@ -338,6 +338,84 @@ def test_division_with_zero_numerator():
 
 
 # -----------------------------------------------------------------------------------
+# Test Power Method
+# -----------------------------------------------------------------------------------
+
+def test_power_positive():
+    """
+    Test the power method with a positive base and positive exponent.
+
+    This test verifies that raising a positive number to a positive exponent
+    returns the correct result.
+    """
+    # Arrange
+    a = 2.0
+    b = 3.0
+    expected_result = 8.0
+
+    # Act
+    result = Operation.power(a, b)
+
+    # Assert
+    assert result == expected_result, f"Expected {a} ** {b} to be {expected_result}, got {result}"
+
+
+def test_power_with_zero_exponent():
+    """
+    Test the power method with an exponent of zero.
+
+    This test verifies that any number raised to the power of zero returns 1.
+    """
+    # Arrange
+    a = 5.0
+    b = 0.0
+    expected_result = 1.0
+
+    # Act
+    result = Operation.power(a, b)
+
+    # Assert
+    assert result == expected_result, f"Expected {a} ** {b} to be {expected_result}, got {result}"
+
+
+def test_power_with_negative_exponent():
+    """
+    Test the power method with a negative exponent.
+
+    This test verifies that a number raised to a negative exponent returns
+    the correct fractional result.
+    """
+    # Arrange
+    a = 2.0
+    b = -2.0
+    expected_result = 0.25
+
+    # Act
+    result = Operation.power(a, b)
+
+    # Assert
+    assert result == expected_result, f"Expected {a} ** {b} to be {expected_result}, got {result}"
+
+
+def test_power_with_zero_base():
+    """
+    Test the power method with a base of zero.
+
+    This test verifies that zero raised to a positive exponent returns zero.
+    """
+    # Arrange
+    a = 0.0
+    b = 3.0
+    expected_result = 0.0
+
+    # Act
+    result = Operation.power(a, b)
+
+    # Assert
+    assert result == expected_result, f"Expected {a} ** {b} to be {expected_result}, got {result}"
+
+
+# -----------------------------------------------------------------------------------
 # Test Invalid Input Types (Negative Testing)
 # -----------------------------------------------------------------------------------
 
@@ -346,6 +424,7 @@ def test_division_with_zero_numerator():
     (Operation.subtraction, 10.0, '5', TypeError),
     (Operation.multiplication, '10', '5', TypeError),
     (Operation.division, 10.0, '5', TypeError),
+    (Operation.power, '2', 3.0, TypeError),
 ])
 def test_operations_invalid_input_types(calc_method, a, b, expected_exception):
     """
