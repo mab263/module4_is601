@@ -133,3 +133,21 @@ class Operation:
         return a / b  # Divides `a` by `b` and returns the quotient.
 
     
+
+    @staticmethod
+    def power(a: float, b: float) -> float:
+        """
+        Raises the first number to the power of the second number.
+
+        **Parameters:**
+        - `a (float)`: The base number.
+        - `b (float)`: The exponent.
+
+        **Returns:**
+        - `float`: The result of a raised to the power of b.
+
+        **Example:**
+        >>> Operation.power(2.0, 3.0)
+        8.0
+        """
+        return a ** b  # Raises a to the power of b and returns the result.
