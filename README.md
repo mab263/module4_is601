@@ -1,5 +1,62 @@
-# 📦 Project Setup
+# 🔢 Professional Calculator REPL Information & Usage 
 
+A command-line calculator application built in Python, featuring a REPL (Read-Eval-Print Loop) interface, a factory-based calculation architecture, session history tracking, and comprehensive error handling.
+
+## Features
+
+- Interactive REPL for continuous calculator use
+- Supported operations: `add`, `subtract`, `multiply`, `divide`, `power`
+- Special commands: `help`, `history`, `exit`
+- Input validation with clear, graceful error messages
+- Division-by-zero and unsupported-operation handling
+- Demonstrates both LBYL and EAFP error-handling paradigms
+- Built using an extensible Factory design pattern (`CalculationFactory`), making it easy to add new operations
+- Fully unit tested with `pytest`, enforcing 100% test coverage via GitHub Actions
+
+## Usage
+
+Run the calculator:
+```bash
+python main.py
+```
+
+Enter commands in the format `<operation> <num1> <num2>`:
+
+Example:
+```
+add 10 5
+Result: AddCalculation: 10.0 Add 5.0 = 15.0
+
+power 2 3
+Result: PowerCalculation: 2.0 Power 3.0 = 8.0
+
+history
+Calculation History:
+
+AddCalculation: 10.0 Add 5.0 = 15.0
+PowerCalculation: 2.0 Power 3.0 = 8.0
+
+divide 5 0
+Cannot divide by zero.
+Please enter a non-zero divisor.
+
+exit
+Exiting calculator. Goodbye!
+```
+
+Type `help` at any prompt to see supported operations and examples.
+
+## Running Tests
+
+```bash
+pytest
+```
+
+This runs the full test suite and enforces 100% test coverage (the build fails if coverage drops below 100%).
+
+---
+
+# 📦 Environment Setup
 ---
 
 # 🧩 1. Install Homebrew (Mac Only)
